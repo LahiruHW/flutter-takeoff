@@ -303,7 +303,9 @@ This project is open source and available under the MIT License.
 
 ## 📞 Support
 
-If you encounter any issues or have questions:
+If you encounter any issues or have questions, either reach out to [@stillcapslock](https://x.com/stillcapslock) (X/Twitter):
+
+or
 
 1. Check the [Flutter documentation](https://docs.flutter.dev/)
 2. Review the dependency installation guides linked in the tool
