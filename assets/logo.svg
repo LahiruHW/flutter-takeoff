@@ -1,0 +1,121 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" transform="translate(0,0)">
+  <defs>
+    <!-- Gradient for rocket body -->
+    <linearGradient id="rocketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#02569B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0468D7;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for flames -->
+    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="128" cy="128" r="120" fill="#F0F9FF"/>
+  <circle cx="128" cy="128" r="115" fill="url(#rocketGrad)" opacity="0.05"/>
+
+  <!-- Main logo group - all elements wrapped for transformation -->
+  <g id="logo-complete" transform="translate(0,10)">
+    
+    <!-- Main rocket structure -->
+    <g id="rocket" transform="translate(128, 50)">
+      <!-- Rocket nose cone -->
+      <path d="M 0,-30 L 20,10 L 15,10 L 0,-20 L -15,10 L -20,10 Z" fill="#0277BD"/>
+      
+      <!-- Main body -->
+      <rect x="-15" y="10" width="30" height="70" rx="2" fill="url(#rocketGrad)"/>
+      
+      <!-- Body highlight -->
+      <rect x="-12" y="12" width="8" height="65" rx="1" fill="#FFFFFF" opacity="0.2"/>
+      
+      <!-- Window/porthole -->
+      <circle cx="0" cy="35" r="12" fill="#1E3A8A" opacity="0.3"/>
+      <circle cx="0" cy="35" r="10" fill="#60A5FA"/>
+      <circle cx="0" cy="35" r="8" fill="#0C4A6E"/>
+      
+      <!-- Flutter logo inside window -->
+      <g id="flutter-logo-in-window" transform="translate(-4, 31) scale(0.024)">
+        <polygon fill="#47C5FB" points="157.665785 0 0 157.665785 48.8009614 206.466197 255.267708 0"/>
+        <polygon fill="#47C5FB" points="156.567183 145.396793 72.1487107 229.815265 121.132608 279.530905 169.842925 230.820587 255.267818 145.396793"/>
+        <polygon fill="#00569E" points="121.133047 279.531124 158.214592 316.61267 255.267159 316.61267 169.842266 230.820807"/>
+        <polygon fill="#00B5F8" points="71.5995742 230.364072 120.401085 181.562561 169.842046 230.821136 121.132827 279.531454"/>
+      </g>
+      
+      <!-- Flutter-inspired geometric accent -->
+      <g id="flutter-emblem">
+        <path d="M -8,55 L 8,55 L 0,63 Z" fill="#54C5F8"/>
+        <path d="M -6,58 L 6,58 L 0,66 Z" fill="#01579B" opacity="0.7"/>
+      </g>
+      
+      <!-- Left fin -->
+      <path d="M -15,60 L -40,95 L -15,80 Z" fill="#01579B"/>
+      <path d="M -15,65 L -35,90 L -15,78 Z" fill="#54C5F8" opacity="0.5"/>
+      
+      <!-- Right fin -->
+      <path d="M 15,60 L 40,95 L 15,80 Z" fill="#01579B"/>
+      <path d="M 15,65 L 35,90 L 15,78 Z" fill="#54C5F8" opacity="0.5"/>
+      
+      <!-- Engine exhaust -->
+      <rect x="-12" y="80" width="24" height="8" fill="#1E3A8A"/>
+      <rect x="-10" y="82" width="20" height="4" fill="#0C4A6E"/>
+    </g>
+    
+    <!-- Rocket flames with animation-ready design -->
+    <g id="flames" transform="translate(128, 138)" filter="url(#glow)">
+      <!-- Outer flame layer -->
+      <path d="M -18,0 Q -20,15 -15,25 Q -10,30 -8,40 L -4,35 L 0,45 L 4,35 L 8,40 Q 10,30 15,25 Q 20,15 18,0 Z" 
+            fill="url(#flameGrad)" opacity="0.8"/>
+      
+      <!-- Middle flame layer -->
+      <path d="M -12,0 Q -13,12 -10,20 Q -6,25 -4,32 L 0,38 L 4,32 Q 6,25 10,20 Q 13,12 12,0 Z" 
+            fill="#FFA500" opacity="0.9"/>
+      
+      <!-- Inner core flame -->
+      <path d="M -6,0 L -4,15 L 0,28 L 4,15 L 6,0 Z" fill="#FFD700"/>
+      
+      <!-- Bright center -->
+      <path d="M -3,5 L -2,12 L 0,20 L 2,12 L 3,5 Z" fill="#FFFACD"/>
+    </g>
+    
+    <!-- Motion trails and particles -->
+    <g id="motion-effects" opacity="0.6">
+      <!-- Left trail -->
+      <path d="M 70,140 Q 60,145 55,150" stroke="#54C5F8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M 65,155 Q 55,160 48,165" stroke="#0468D7" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+      
+      <!-- Right trail -->
+      <path d="M 186,140 Q 196,145 201,150" stroke="#54C5F8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M 191,155 Q 201,160 208,165" stroke="#0468D7" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+      
+      <!-- Sparkles/stars -->
+      <circle cx="75" cy="150" r="2.5" fill="#54C5F8"/>
+      <circle cx="181" cy="150" r="2.5" fill="#54C5F8"/>
+      <circle cx="60" cy="165" r="2" fill="#0468D7"/>
+      <circle cx="196" cy="165" r="2" fill="#0468D7"/>
+      
+      <!-- Flutter-colored accent particles -->
+      <circle cx="85" cy="170" r="1.5" fill="#01579B"/>
+      <circle cx="171" cy="170" r="1.5" fill="#01579B"/>
+    </g>
+    
+    <!-- Smoke/exhaust clouds -->
+    <g id="smoke" opacity="0.15">
+      <ellipse cx="110" cy="185" rx="15" ry="8" fill="#0468D7"/>
+      <ellipse cx="146" cy="185" rx="15" ry="8" fill="#0468D7"/>
+      <ellipse cx="128" cy="195" rx="20" ry="10" fill="#01579B"/>
+    </g>
+  </g>
+</svg>

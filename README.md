@@ -1,6 +1,10 @@
-# 🚀 Flutter Takeoff
-
-A beautiful, interactive CLI tool built with Go that simplifies Flutter SDK installation
+<div align="center">
+  <img src="assets/logo.svg" alt="Flutter Takeoff Logo" width="200"/>
+  
+  # Flutter Takeoff
+  
+  A beautiful, interactive CLI tool built with Go that simplifies Flutter SDK installation
+</div>
 
 Currently only supported on Windows with Android support.
 
@@ -36,17 +40,19 @@ Before running the Flutter Installation Tool, ensure you have:
 ### Download & Run
 
 1. Download the latest release from [Releases](https://github.com/yourusername/flutter-install-tool/releases)
-   
+
    **OR** build from source:
+
    ```powershell
    # Using build script (recommended - injects version info)
    .\build.ps1
-   
+
    # Or simple build
    go build -o flutter-installer.exe .
    ```
 
 2. Run the installer:
+
    ```powershell
    .\flutter-installer.exe
    ```
@@ -58,14 +64,18 @@ Before running the Flutter Installation Tool, ensure you have:
 The tool provides an interactive menu with the following options:
 
 ### 1. Check Dependencies
+
 Scans your system for required software and displays installation status:
+
 - ✓ Git
 - ✓ Java JDK
 - ✓ Android SDK
 - ✓ Flutter SDK (if already installed)
 
 ### 2. Install Flutter SDK
+
 Guides you through Flutter installation:
+
 - Choose custom installation path or use default (`%USERPROFILE%\flutter`)
 - Downloads Flutter SDK
 - Extracts files
@@ -73,10 +83,13 @@ Guides you through Flutter installation:
 - Provides next steps for Android license acceptance
 
 ### 3. Run Flutter Doctor
+
 Executes `flutter doctor -v` to diagnose your Flutter installation and identify any issues.
 
 ### 4. Version Info
+
 Displays detailed version and build information:
+
 - Semantic version number
 - Build date and time
 - Git commit hash
@@ -84,6 +97,7 @@ Displays detailed version and build information:
 - Links to repository and issue tracker
 
 ### 5. Exit
+
 Safely exits the application.
 
 ## 🏗️ Project Structure
@@ -122,6 +136,7 @@ The tool uses several beautiful UI components:
 ## 🔧 Architecture Highlights
 
 ### Extensibility
+
 The project is designed with extensibility in mind:
 
 ```go
@@ -144,6 +159,7 @@ const (
 ```
 
 ### Key Interfaces
+
 - `WindowsInstaller` - Handles Windows-specific operations
 - `InstallConfig` - Centralized configuration management
 - `Dependency` - Represents checkable prerequisites
@@ -153,11 +169,13 @@ const (
 This project demonstrates several Go best practices and CLI development techniques:
 
 ### Libraries Used
+
 - **[Bubble Tea](https://github.com/charmbracelet/bubbletea)** - Terminal UI framework based on The Elm Architecture
 - **[Lipgloss](https://github.com/charmbracelet/lipgloss)** - Style definitions for terminal output
 - **[Bubbles](https://github.com/charmbracelet/bubbles)** - Common UI components (lists, spinners, progress bars)
 
 ### Patterns Demonstrated
+
 1. **MVC-like Architecture** - Separation of UI, business logic, and data
 2. **Command Pattern** - Menu-driven actions
 3. **Strategy Pattern** - Platform-specific installers
@@ -166,6 +184,7 @@ This project demonstrates several Go best practices and CLI development techniqu
 ## 🛠️ Development
 
 ### Building from Source
+
 ```powershell
 # Clone the repository
 git clone <your-repo-url>
@@ -193,6 +212,7 @@ go build -o flutter-installer.exe .
 The project uses semantic versioning. To release a new version:
 
 1. Update version in `pkg/version/version.go`:
+
    ```go
    const (
        Major      = 1
@@ -205,6 +225,7 @@ The project uses semantic versioning. To release a new version:
 2. Update `CHANGELOG.md` with changes
 
 3. Build release:
+
    ```powershell
    .\build.ps1 -OutputName flutter-installer-v1.1.0
    ```
@@ -225,6 +246,7 @@ To add support for macOS or Linux:
 4. Update the configuration to support the new platform
 
 Example:
+
 ```go
 type MacOSInstaller struct {
     Config *InstallConfig
@@ -290,16 +312,18 @@ If you encounter any issues or have questions:
 ## 🎓 Learning More
 
 This tool was built as a learning project to demonstrate:
+
 - Modern CLI application development in Go
 - Beautiful terminal user interfaces
 - System integration and automation
 - Software installation best practices
 
 ### Recommended Reading
+
 - [Bubble Tea Tutorial](https://github.com/charmbracelet/bubbletea/tree/master/tutorials)
 - [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
 - [Android Development Setup](https://docs.flutter.dev/platform-integration/android/setup)
 
 ---
 
-**Made with ❤️ and Go** | Happy Flutter Development! 🎯
+**Made with ❤️ and Go by @LahiruHW** | Happy Flutter Development! 🎯
