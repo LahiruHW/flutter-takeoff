@@ -9,8 +9,8 @@
 Currently only supported on Windows with Android support.
 
 > [!CAUTION]
+>
 > ### **The stable version of this project is still in an experimental phase - please use it at your own risk**
-
 
 ## ✨ Features
 
@@ -326,4 +326,4 @@ This tool was built as a learning project to demonstrate:
 
 ---
 
-**Made with ❤️ and Go by @LahiruHW** | Happy Flutter Development! 🎯
+**Made with ❤️ and<img src="assets/golang-logo.svg" alt="golang logo" width="40" align="center"/>by [@LahiruHW](https://github.com/LahiruHW)** | Happy Flutter Development! 🎯
