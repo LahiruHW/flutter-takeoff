@@ -1,6 +1,12 @@
 # 🚀 Flutter Takeoff
 
-A beautiful, interactive CLI tool built with Go that simplifies Flutter SDK installation on Windows with Android support.
+A beautiful, interactive CLI tool built with Go that simplifies Flutter SDK installation
+
+Currently only supported on Windows with Android support.
+
+> [!CAUTION]
+> ### **The stable version of this project is still in an experimental phase - please use it at your own risk**
+
 
 ## ✨ Features
 
