@@ -75,8 +75,8 @@ Build Date: 2025-12-04T15:17:34Z
 Git Commit: abc1234
 Git Branch: main
 
-GitHub: https://github.com/yourusername/flutter-install-tool
-Report issues: https://github.com/yourusername/flutter-install-tool/issues
+GitHub: https://github.com/LahiruHW/flutter-takeoff
+Report issues: https://github.com/LahiruHW/flutter-takeoff/issues
 ```
 
 ### Building with Version Info
@@ -188,7 +188,7 @@ The version system is ready for:
 
 3. Push to GitHub:
    ```bash
-   git remote add origin https://github.com/yourusername/flutter-install-tool.git
+   git remote add origin https://github.com/LahiruHW/flutter-takeoff.git
    git push -u origin main
    git push origin v1.0.0
    ```

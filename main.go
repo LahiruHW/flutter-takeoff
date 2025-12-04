@@ -360,8 +360,8 @@ func showVersionInfo() {
 	}
 
 	fmt.Println()
-	fmt.Println(ui.SubtleStyle.Render("GitHub: https://github.com/yourusername/flutter-install-tool"))
-	fmt.Println(ui.SubtleStyle.Render("Report issues: https://github.com/yourusername/flutter-install-tool/issues"))
+	fmt.Println(ui.SubtleStyle.Render("GitHub: https://github.com/LahiruHW/flutter-takeoff"))
+	fmt.Println(ui.SubtleStyle.Render("Report issues: https://github.com/LahiruHW/flutter-takeoff/issues"))
 	fmt.Println()
 
 	waitForEnter()

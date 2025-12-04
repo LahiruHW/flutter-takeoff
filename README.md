@@ -39,7 +39,7 @@ Before running the Flutter Installation Tool, ensure you have:
 
 ### Download & Run
 
-1. Download the latest release from [Releases](https://github.com/yourusername/flutter-install-tool/releases)
+1. Download the latest release from [Releases](https://github.com/LahiruHW/flutter-takeoff/releases)
 
    **OR** build from source:
 

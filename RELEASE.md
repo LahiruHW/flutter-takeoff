@@ -110,7 +110,7 @@ git push origin v1.1.0
 
 ### 5. Create GitHub Release
 
-1. Go to: https://github.com/yourusername/flutter-install-tool/releases
+1. Go to: https://github.com/LahiruHW/flutter-takeoff/releases
 2. Click "Draft a new release"
 3. Select the tag: `v1.1.0`
 4. Release title: `v1.1.0 - macOS Support`

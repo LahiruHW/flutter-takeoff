@@ -81,6 +81,6 @@ Versions follow Semantic Versioning: `MAJOR.MINOR.PATCH[-PRERELEASE]`
 
 ## Links
 
-- [Repository](https://github.com/yourusername/flutter-install-tool)
-- [Issues](https://github.com/yourusername/flutter-install-tool/issues)
-- [Releases](https://github.com/yourusername/flutter-install-tool/releases)
+- [Repository](https://github.com/LahiruHW/flutter-takeoff)
+- [Issues](https://github.com/LahiruHW/flutter-takeoff/issues)
+- [Releases](https://github.com/LahiruHW/flutter-takeoff/releases)
