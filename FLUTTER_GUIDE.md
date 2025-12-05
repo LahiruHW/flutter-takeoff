@@ -1,6 +1,6 @@
 # Flutter Installation Guide
 
-This document provides detailed information about installing Flutter and its dependencies manually, which complements what the Flutter Installation Tool automates.
+This document provides detailed information about installing Flutter and its dependencies manually, which complements what Flutter Takeoff automates.
 
 ## Prerequisites for Windows + Android Development
 

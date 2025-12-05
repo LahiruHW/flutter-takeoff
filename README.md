@@ -29,7 +29,7 @@ Currently only supported on Windows with Android support.
 
 ## 📋 Prerequisites
 
-Before running the Flutter Installation Tool, ensure you have:
+Before running Flutter Takeoff, ensure you have:
 
 1. **Git for Windows** - [Download here](https://git-scm.com/download/win)
 2. **Java JDK 17+** - [Download Temurin](https://adoptium.net/)
@@ -187,8 +187,8 @@ This project demonstrates several Go best practices and CLI development techniqu
 
 ```powershell
 # Clone the repository
-git clone <your-repo-url>
-cd flutter_install_tool
+git clone <https://github.com/LahiruHW/flutter-takeoff.git>
+cd flutter-takeoff
 
 # Install dependencies
 go mod download
@@ -267,18 +267,19 @@ To add iOS, web, or desktop support:
 
 ## 🎯 Future Enhancements
 
-- [ ] macOS support
-- [ ] Linux support
-- [ ] iOS development setup (for macOS)
-- [ ] Web development setup
-- [ ] Desktop development setup (Windows/Linux/macOS)
 - [ ] Automatic Git installation
 - [ ] Automatic Java JDK installation
 - [ ] Automatic Android SDK installation
+- [ ] Uninstallation feature (only remove added tools)
+- [ ] Web development setup
+- [ ] Android SDK manager (gradle, platform-tools etc.)
+- [ ] macOS support
+- [ ] Linux support
+- [ ] iOS development setup (for macOS)
+- [ ] Desktop development setup (Windows/Linux/macOS)
 - [ ] Flutter version selection (stable/beta/dev)
 - [ ] VS Code extension installation
 - [ ] Android Studio plugin installation
-- [ ] Uninstallation feature
 - [ ] Update Flutter feature
 - [ ] Configuration file support
 

@@ -59,7 +59,7 @@ Bubbles provides ready-to-use components:
 
 ## Color Scheme
 
-The Flutter Installation Tool uses the following color palette:
+Flutter Takeoff uses the following color palette:
 
 | Color Name | Hex Code | Usage |
 |------------|----------|-------|

@@ -86,7 +86,7 @@ Report issues: https://github.com/LahiruHW/flutter-takeoff/issues
 .\build.ps1
 
 # Output shows:
-# Building Flutter Installation Tool v1.0.0
+# Building Flutter Takeoff v1.0.0
 #   Build Date: 2025-12-04T15:17:34Z
 #   Git Commit: unknown
 #   Git Branch: unknown
@@ -132,9 +132,9 @@ Report issues: https://github.com/LahiruHW/flutter-takeoff/issues
 The build scripts use Go's `-ldflags` to inject values at compile time:
 
 ```powershell
-$LDFLAGS = "-X 'flutter_install_tool/pkg/version.BuildDate=$BUILD_DATE' " +
-           "-X 'flutter_install_tool/pkg/version.GitCommit=$GIT_COMMIT' " +
-           "-X 'flutter_install_tool/pkg/version.GitBranch=$GIT_BRANCH'"
+$LDFLAGS = "-X 'flutter-takeoff/pkg/version.BuildDate=$BUILD_DATE' " +
+           "-X 'flutter-takeoff/pkg/version.GitCommit=$GIT_COMMIT' " +
+           "-X 'flutter-takeoff/pkg/version.GitBranch=$GIT_BRANCH'"
 
 go build -ldflags $LDFLAGS -o output.exe .
 ```

@@ -1,4 +1,4 @@
-# Build script for Flutter Installation Tool
+# Build script for Flutter Takeoff
 # Sets version information at build time
 
 param(

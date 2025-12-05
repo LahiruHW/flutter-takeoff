@@ -1,6 +1,6 @@
 # Extension Examples
 
-This document shows how to extend the Flutter Installation Tool with new features.
+This document shows how to extend Flutter Takeoff with new features.
 
 ## Example 1: Adding macOS Support
 
@@ -325,7 +325,7 @@ func DownloadFile(url, filepath string, callback ProgressCallback) error {
 ### Usage in Main
 
 ```go
-import "flutter_install_tool/pkg/downloader"
+import "flutter-takeoff/pkg/downloader"
 
 func downloadFlutter() error {
 	url := "https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.x.x-stable.zip"
@@ -560,4 +560,4 @@ Write-Host "Build complete!"
 
 ---
 
-These examples demonstrate the extensibility of the Flutter Installation Tool. Feel free to implement any of these features or create your own! 🚀
+These examples demonstrate the extensibility of Flutter Takeoff. Feel free to implement any of these features or create your own! 🚀
