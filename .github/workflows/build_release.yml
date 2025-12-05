@@ -31,17 +31,17 @@ jobs:
       - name: Get current version from code
         id: get_version
         run: |
-          VERSION=$(go run -C . << 'EOF'
-          package main
-          import (
-            "fmt"
-            "flutter_takeoff/pkg/version"
-          )
-          func main() {
-            fmt.Print(version.Version())
-          }
-          EOF
-          )
+          # Extract version from version.go
+          MAJOR=$(grep -oP '^\s*Major\s*=\s*\K\d+' pkg/version/version.go)
+          MINOR=$(grep -oP '^\s*Minor\s*=\s*\K\d+' pkg/version/version.go)
+          PATCH=$(grep -oP '^\s*Patch\s*=\s*\K\d+' pkg/version/version.go)
+          PRERELEASE=$(grep -oP '^\s*PreRelease\s*=\s*"\K[^"]*' pkg/version/version.go || echo "")
+          
+          VERSION="${MAJOR}.${MINOR}.${PATCH}"
+          if [ -n "$PRERELEASE" ]; then
+            VERSION="${VERSION}-${PRERELEASE}"
+          fi
+          
           echo "version=v$VERSION" >> $GITHUB_OUTPUT
           echo "Current version: v$VERSION"
 
