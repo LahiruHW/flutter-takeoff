@@ -9,7 +9,6 @@
 Currently only supported on Windows with Android support.
 
 > [!CAUTION]
->
 > ### **The stable version of this project is still in an experimental phase - please use it at your own risk**
 
 ## ✨ Features
@@ -187,7 +186,7 @@ This project demonstrates several Go best practices and CLI development techniqu
 
 ```powershell
 # Clone the repository
-git clone <https://github.com/LahiruHW/flutter-takeoff.git>
+git clone https://github.com/LahiruHW/flutter-takeoff.git
 cd flutter-takeoff
 
 # Install dependencies
@@ -196,10 +195,6 @@ go mod download
 # Build with version information (recommended)
 .\build.ps1
 
-# Or on Linux/macOS
-chmod +x build.sh
-./build.sh
-
 # Simple build (without version info)
 go build -o flutter-installer.exe .
 
@@ -207,34 +202,49 @@ go build -o flutter-installer.exe .
 .\flutter-installer.exe
 ```
 
-### Version Management
+### Version Management & Releases & Releases
 
-The project uses semantic versioning. To release a new version:
+The project uses **semantic versioning** with an **automated release workflow**. 
+
+#### Creating a New Release
 
 1. Update version in `pkg/version/version.go`:
 
    ```go
    const (
-       Major      = 1
-       Minor      = 1
-       Patch      = 0
+       Major      = 1  // Increment this
+       Minor      = 1  // or this
+       Patch      = 0  // or this ... depending on the changes (i.e. within reason)
        PreRelease = "" // or "beta", "rc.1", etc.
    )
    ```
 
-2. Update `CHANGELOG.md` with changes
+2. Update `CHANGELOG.md` with changes for the new version
 
-3. Build release:
+3. Commit and push to `main`:
 
    ```powershell
-   .\build.ps1 -OutputName flutter-installer-v1.1.0
+   git add pkg/version/version.go CHANGELOG.md
+   git commit -m "chore: bump version to 1.1.0"
+   git push origin main
    ```
 
-4. Tag and push:
-   ```bash
-   git tag -a v1.1.0 -m "Release v1.1.0"
-   git push origin v1.1.0
-   ```
+4. **That's it!** The GitHub Actions workflow automatically:
+   - Detects the version change
+   - Builds the release binary
+   - Creates the git tag (`v1.1.0`)
+   - Publishes to [GitHub Releases](https://github.com/LahiruHW/flutter-takeoff/releases)
+   - Attaches the `.exe` and SHA256 checksum files
+
+#### How the Workflow Works
+
+The `build_release.yml` workflow triggers when you push changes to `pkg/version/version.go`:
+
+1. **Check Version**: Compares the version in code vs. the latest GitHub release
+2. **Build & Release**: If the version is new, it automatically builds and publishes
+3. **Skip**: If the version hasn't changed, nothing happens
+
+**No manual tagging required!** Just update the version number and push.
 
 ### Adding New Platforms
 
