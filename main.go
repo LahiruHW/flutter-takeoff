@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"path/filepath"
 	"runtime"
 	"strings"
 
@@ -248,22 +249,63 @@ func runInstallation(inst *installer.WindowsInstaller) {
 		}
 	}
 
-	// Get installation path
+	// Get installation path with file picker
 	defaultPath := inst.GetDefaultFlutterPath()
 	fmt.Printf("\n%s\n", ui.NormalStyle.Render("Flutter installation path:"))
-	fmt.Printf("%s %s\n", ui.SubtleStyle.Render("Default:"), defaultPath)
-	fmt.Printf("%s ", ui.SubtleStyle.Render("Press Enter to use default, or type a custom path:"))
+	fmt.Printf("%s %s\n\n", ui.SubtleStyle.Render("Default:"), defaultPath)
+	
+	fmt.Println(ui.SubtleStyle.Render("Choose an option:"))
+	fmt.Println(ui.SubtleStyle.Render("  1. Use default path"))
+	fmt.Println(ui.SubtleStyle.Render("  2. Browse and select a path"))
+	fmt.Println(ui.SubtleStyle.Render("  3. Type a custom path"))
+	fmt.Printf("\n%s ", ui.SubtleStyle.Render("Your choice (1-3):"))
 
 	reader := bufio.NewReader(os.Stdin)
-	customPath, _ := reader.ReadString('\n')
-	customPath = strings.TrimSpace(customPath)
+	choice, _ := reader.ReadString('\n')
+	choice = strings.TrimSpace(choice)
 
-	if customPath != "" {
-		inst.Config.FlutterPath = customPath
-	} else {
-		inst.Config.FlutterPath = defaultPath
+	var selectedPath string
+
+	switch choice {
+	case "1", "":
+		selectedPath = defaultPath
+	
+	case "2":
+		// Use file picker
+		fmt.Println()
+		startPath := filepath.Dir(defaultPath)
+		picker := ui.NewFilePicker(startPath, 20)
+		p := tea.NewProgram(picker)
+		
+		finalModel, err := p.Run()
+		if err != nil {
+			fmt.Println(ui.ErrorStyle.Render("Error launching file picker"))
+			selectedPath = defaultPath
+		} else if pickerModel, ok := finalModel.(ui.FilePickerModel); ok {
+			if pickerModel.Selected() != "" {
+				selectedPath = pickerModel.Selected()
+			} else {
+				// Cancelled, use default
+				selectedPath = defaultPath
+			}
+		}
+	
+	case "3":
+		fmt.Printf("%s ", ui.SubtleStyle.Render("Enter custom path:"))
+		customPath, _ := reader.ReadString('\n')
+		customPath = strings.TrimSpace(customPath)
+		if customPath != "" {
+			selectedPath = customPath
+		} else {
+			selectedPath = defaultPath
+		}
+	
+	default:
+		fmt.Println(ui.WarningStyle.Render("Invalid choice, using default path"))
+		selectedPath = defaultPath
 	}
 
+	inst.Config.FlutterPath = selectedPath
 	fmt.Printf("\n%s %s\n\n",
 		ui.SuccessStyle.Render("✓ Installation path set to:"),
 		inst.Config.FlutterPath)
